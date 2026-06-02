@@ -11,12 +11,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
 
     <style>
-        /* الألوان المأخوذة مباشرة من ثيم تطبيق فلاتر الخاص بك (main.dart) */
         :root {
             --bg-color: #0A0A14;
             --surface-color: #1E1E2E;
-            --primary-color: #00E5FF;   /* Cyan */
-            --secondary-color: #FF6B35; /* Orange */
+            --primary-color: #00E5FF;   
+            --secondary-color: #FF6B35;
             --text-main: #FFFFFF;
             --text-muted: #A0A0B8;
             --border-color: #1E1E2E;
@@ -36,24 +35,24 @@
             overflow-x: hidden;
         }
 
-        /* الخلفية النيون المتوهجة لمحاكاة واجهة التطبيق الاحترافية */
         .glow-bg {
             position: absolute;
             top: -150px;
             left: 50%;
             transform: translateX(-50%);
-            width: 600px;
+            width: 100%;
+            max-width: 600px;
             height: 600px;
             background: radial-gradient(circle, rgba(0, 229, 255, 0.15) 0%, rgba(10, 10, 20, 0) 70%);
             z-index: -1;
             pointer-events: none;
         }
 
-        /* الهيدر / شريط التنقل */
         header {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            flex-direction: row-reverse;
             padding: 25px 8%;
             border-bottom: 1px solid var(--border-color);
             background-color: rgba(10, 10, 20, 0.8);
@@ -70,7 +69,13 @@
             color: var(--text-main);
             display: flex;
             align-items: center;
+            flex-direction: row-reverse;
             gap: 10px;
+        }
+
+         .logo div {
+            display: flex;
+            align-items: center;
         }
 
         .logo span {
@@ -85,21 +90,9 @@
             border-radius: 20px;
             font-size: 12px;
             font-weight: bold;
-            display: none; /* يظهر تلقائياً عبر الـ JS */
+            display: none; 
         }
 
-        .github-link {
-            color: var(--text-muted);
-            font-size: 20px;
-            transition: color 0.3s ease;
-            text-decoration: none;
-        }
-
-        .github-link:hover {
-            color: var(--primary-color);
-        }
-
-        /* القسم الرئيسي (Hero Section) */
         .hero {
             max-width: 1200px;
             margin: 0 auto;
@@ -128,7 +121,6 @@
             line-height: 1.8;
         }
 
-        /* شبكة أزرار التحميل للأنظمة المتاحة */
         .download-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -154,7 +146,6 @@
             overflow: hidden;
         }
 
-        /* تلميحات توهج الأنظمة المدعومة */
         .download-card.active-platform:hover {
             transform: translateY(-5px);
             border-color: var(--secondary-color);
@@ -182,7 +173,6 @@
             color: var(--text-muted);
         }
 
-        /* تنسيق خاص بالأنظمة غير المفعلة (Apple) */
         .download-card.disabled-platform {
             opacity: 0.4;
             cursor: not-allowed;
@@ -205,47 +195,6 @@
             font-weight: bold;
         }
 
-        /* قسم مميزات التطبيق المأخوذة من الكود والـ Context الخاص بك */
-        .features {
-            max-width: 1200px;
-            margin: 60px auto;
-            padding: 40px 20px;
-            border-top: 1px solid var(--border-color);
-        }
-
-        .features-title {
-            text-align: center;
-            font-size: 28px;
-            font-weight: 700;
-            margin-bottom: 40px;
-        }
-
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-
-        .feature-item {
-            background-color: var(--surface-color);
-            padding: 30px;
-            border-radius: 12px;
-            border-right: 4px solid var(--primary-color);
-        }
-
-        .feature-item h4 {
-            font-size: 18px;
-            margin-bottom: 10px;
-            color: var(--primary-color);
-        }
-
-        .feature-item p {
-            font-size: 14px;
-            color: var(--text-muted);
-            line-height: 1.6;
-        }
-
-        /* الفوتر السفلي */
         footer {
             text-align: center;
             padding: 40px 20px;
@@ -255,7 +204,6 @@
             background-color: #06060C;
         }
 
-        /* تأثيرات التحميل الانتظاري للأزرار قبل جلب الروابط */
         .loading {
             pointer-events: none;
             position: relative;
@@ -280,17 +228,17 @@
 
     <header>
         <div class="logo">
-            <span>CENAKO</span> تطبيق
+            <div>
+                <span>KO</span>
+                CENA
+            </div>  
             <div class="version-tag" id="version-badge">...</div>
         </div>
-        <a href="https://github.com/CENAKO/CENAKO" target="_blank" class="github-link" title="مشاهدة المستودع على GitHub">
-            <i class="fab fa-github"></i>
-        </a>
     </header>
 
     <section class="hero">
-        <h1>مشاهدة بوعيٍ آخر.. تطبيق <span>CENAKO</span> الأصلي</h1>
-        <p>تطبيق Native بالكامل مبني بلغة Dart وفلاتر لعرض محتوى الأفلام والمسلسلات بأعلى كفاءة وسرعة استجابة، مدعوماً بمشغل فيديو داخلي متطور ونظام مزامنة ترجمة فوري.</p>
+        <h1>منتج <span>عراقي</span> 100%</h1>
+        <p>روابط التحميل.</p>
         
         <div class="download-grid">
             
@@ -329,26 +277,8 @@
         </div>
     </section>
 
-    <section class="features">
-        <div class="features-title">ما الذي يجعل تطبيق CENAKO فريداً؟</div>
-        <div class="features-grid">
-            <div class="feature-item">
-                <h4>واجهة Native بالكامل</h4>
-                <p>تم بناء التطبيق بدون استخدام الـ WebViews الثقيلة، ليوفر تجربة تصفح سريعة وسلسة جداً مخصصة بشكل كامل للأنظمة المختلفة بالاعتماد على محرك فلاتر.</p>
-            </div>
-            <div class="feature-item">
-                <h4>مشغل فيديو داخلي احترافي (media_kit)</h4>
-                <p>مدمج بأقوى محركات تشغيل الفيديو لتوفير عرض سلس وثابت مع إمكانيات التحكم في جودة البث، وتخطي المقدمات التلقائي (Intro Skip) دون أي تعليق.</p>
-            </div>
-            <div class="feature-item">
-                <h4>إدارة ذكية ومتقدمة للترجمة</h4>
-                <p>يدعم جلب ملفات الترجمة الفورية (SRT / VTT)، مع إتاحة التخصيص الكامل لحواف الخط، الألوان، وخلفية الترجمة لحفظها بشكل دائم في الإعدادات.</p>
-            </div>
-        </div>
-    </section>
-
     <footer>
-        <p>جميع الحقوق محفوظة © 2026 تطبيق CENAKO. تم التطوير وبناء الهوية بكل حب لـ كود فلاتر الأصلي.</p>
+        <p>جميع الحقوق محفوظة © 2026 تطبيق CENAKO.</p>
     </footer>
 
     <script>
@@ -361,13 +291,11 @@
             const btnLinux = document.getElementById('btn-linux');
 
             try {
-                // استدعاء معلومات أحدث إصدار متاح عبر الـ API الرسمي لـ GitHub
                 const response = await fetch(`https://api.github.com/repos/${REPO_PATH}/releases/latest`);
                 if (!response.ok) throw new Error('فشل في جلب البيانات من GitHub API');
                 
                 const releaseData = await response.json();
                 
-                // تحديث رقم الإصدار (Tag) في أعلى الموقع
                 if (releaseData.tag_name) {
                     versionBadge.innerText = releaseData.tag_name;
                     versionBadge.style.display = 'inline-block';
@@ -375,25 +303,21 @@
 
                 let foundAndroid = false, foundWindows = false, foundLinux = false;
 
-                // قراءة مصفوفة الملفات المرفوعة داخل الـ Tag
                 if (releaseData.assets && releaseData.assets.length > 0) {
                     releaseData.assets.forEach(asset => {
                         const fileName = asset.name;
                         const downloadUrl = asset.browser_download_url;
 
-                        // التحقق من ملف الأندرويد بناءً على طلبك (Android.apk)
                         if (fileName === 'Android.apk') {
                             btnAndroid.href = downloadUrl;
                             btnAndroid.classList.remove('loading');
                             foundAndroid = true;
                         } 
-                        // التحقق من ملف الويندوز بناءً على طلبك (Windows.exe)
                         else if (fileName === 'Windows.exe') {
                             btnWindows.href = downloadUrl;
                             btnWindows.classList.remove('loading');
                             foundWindows = true;
                         } 
-                        // التحقق من ملف اللينكس في حال احتواء اسمه على كلمة Linux
                         else if (fileName.toLowerCase().includes('linux')) {
                             btnLinux.href = downloadUrl;
                             btnLinux.classList.remove('loading');
@@ -402,7 +326,6 @@
                     });
                 }
 
-                // احتياطياً: إذا لم يجد السكربت ملفاً معيناً بالاسم المطابق تماماً، يتم ربطه بصفحة الإصدارات العامة
                 const fallbackUrl = `https://github.com/${REPO_PATH}/releases/latest`;
                 if (!foundAndroid) { btnAndroid.href = fallbackUrl; btnAndroid.classList.remove('loading'); }
                 if (!foundWindows) { btnWindows.href = fallbackUrl; btnWindows.classList.remove('loading'); }
@@ -410,7 +333,6 @@
 
             } catch (error) {
                 console.error("حدث خطأ أثناء جلب روابط الإصدار:", error);
-                // في حالة انقطاع الاتصال أو وصول الـ API للحد الأقصى، يتم تحويل الروابط لصفحة الـ Releases لضمان عمل الموقع دائماً
                 const generalFallback = `https://github.com/${REPO_PATH}/releases`;
                 btnAndroid.href = generalFallback; btnAndroid.classList.remove('loading');
                 btnWindows.href = generalFallback; btnWindows.classList.remove('loading');
@@ -421,7 +343,6 @@
             }
         }
 
-        // تشغيل الدالة فور تحميل الصفحة بالكامل
         window.addEventListener('DOMContentLoaded', initLatestDownloads);
     </script>
 </body>
